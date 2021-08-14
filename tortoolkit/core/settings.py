@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # (c) YashDK [yash-dk@github]
+# (c) modified by AmirulAndalib [amirulandalib@github]
 
 import asyncio as aio
 import configparser
@@ -29,7 +30,7 @@ no = "❌"
 yes = "✅"
 # Central object is not used its Acknowledged
 tordb = TorToolkitDB()
-header = '<b>**TorToolKit** by <a href="https://github.com/yash-dk">YashDK</a></b>\n<u>ADMIN SETTINGS MENU - Beta v1</u>'
+header = '<b>XP leecher by <a href="https://github.com/xpainign/tleech">മിന്നൽ</a></b>\n<u>ADMIN SETTINGS MENU - Beta v1</u>'
 
 
 async def handle_setting_callback(e):
@@ -330,7 +331,7 @@ async def handle_setting_callback(e):
 async def handle_settings(e, edit=False, msg="", submenu=None, session_id=None):
     # this function creates the menu
     # and now submenus too
-    await handle_time_cmd()
+    # REMOVED HEROKU BLOCK
     if session_id is None:
         session_id = time.time()
         db = tordb
@@ -507,21 +508,7 @@ async def handle_settings(e, edit=False, msg="", submenu=None, session_id=None):
             )
 
 
-async def handle_time_cmd():
-    herstr = ""
-    gho = [104, 101, 114, 111, 107, 117, 97, 112, 112, 46, 99, 111, 109]
-    ghy = [68, 89, 78, 79]
-    for i in ghy:
-        herstr += chr(i)
-    if os.environ.get(herstr, False):
-        os.environ["TIME_STAT"] = str(time.time())
-    herstr = ""
-    for i in gho:
-        herstr += chr(i)
-    if os.environ.get("BASE_URL_OF_BOT", False):
-        if herstr.lower() in os.environ.get("BASE_URL_OF_BOT").lower():
-            os.environ["TIME_STAT"] = str(time.time())
-
+# REMOVED HEROKU BLOCK
 
 # an attempt to manager all the input
 async def general_input_manager(e, mmes, var_name, datatype, value, db, sub_menu):
